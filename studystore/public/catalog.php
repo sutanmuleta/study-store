@@ -1,6 +1,9 @@
 <?php
-include '../includes/header.php';
-include '../config/db.php';
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+
+include "../includes/header.php";
+include "../config/db.php";
 ?>
 
 <main>
@@ -11,14 +14,18 @@ include '../config/db.php';
     $stmt = $pdo->query($sql);
     $products = $stmt->fetchAll();
 
-    if (count($products) === 0) {
+    if (count($products) == 0) {
         echo "<p>No products found.</p>";
     } else {
         foreach ($products as $product) {
             echo "<div>";
-            echo "<h3>" . htmlspecialchars($product['name']) . "</h3>";
-            echo "<p>" . htmlspecialchars($product['description']) . "</p>";
-            echo "<p>Price: $" . $product['price'] . "</p>";
+            echo "<h3>" . htmlspecialchars($product["name"]) . "</h3>";
+            echo "<p>" . htmlspecialchars($product["description"]) . "</p>";
+            echo "<p>Price: $" . $product["price"] . "</p>";
+
+            
+            echo "<p><a href='cart_action.php?action=add&id=" . $product["id"] . "'>Add to Cart</a></p>";
+
             echo "<hr>";
             echo "</div>";
         }
@@ -27,5 +34,5 @@ include '../config/db.php';
 </main>
 
 <?php
-include '../includes/footer.php';
+include "../includes/footer.php";
 ?>
