@@ -1,13 +1,11 @@
 <?php
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Digital Study Resources Store</title>
-
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=123">
 </head>
 <body>
 
