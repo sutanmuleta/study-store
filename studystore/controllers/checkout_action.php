@@ -8,7 +8,6 @@ if (!isset($_SESSION["cart"]) || count($_SESSION["cart"]) == 0) {
     exit;
 }
 
-
 $customer_name = trim($_POST["customer_name"] ?? "");
 $email = trim($_POST["email"] ?? "");
 $phone = trim($_POST["phone"] ?? "");
@@ -20,7 +19,7 @@ if ($customer_name == "" || $email == "" || $phone == "" || $address == "") {
     exit;
 }
 
-// order
+// ordeer 
 $stmt = $pdo->prepare("INSERT INTO orders (customer_name, email, phone, address) VALUES (?, ?, ?, ?)");
 $stmt->execute([$customer_name, $email, $phone, $address]);
 
