@@ -19,6 +19,8 @@
         <a href="catalog.php">Catalog</a> |
         <a href="cart.php">Cart</a>
         <a href="checkout.php">Checkout</a>
+        <a href="orders.php">Past Orders</a>
+
 
     </nav>
     <hr>
